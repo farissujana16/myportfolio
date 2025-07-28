@@ -133,16 +133,22 @@ body.bg-dark-mode {
   padding: 20px 20px;
   border: 2px solid #646464;
   display: inline-block;
-  border-radius: 15px;
+  background-color: transparent; /* Awalnya transparan */
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
 }
 
 .cover-image {
   filter: grayscale(100%);
-  /* fill: white; */
   transition: filter 0.2s ease;
 }
 
-.cover-image:hover {
+.skill-image:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* efek transparan hover */
+}
+
+/* Ketika hover ke skill-image, icon dalamnya jadi menyala */
+.skill-image:hover .cover-image {
   filter: grayscale(0%);
 }
 

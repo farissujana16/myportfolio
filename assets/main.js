@@ -11,13 +11,41 @@ fetch("assets/data.json")
     var str = "";
 
     const techColorMap = {
-      Laravel: "danger",
-      MySQL: "warning",
-      Flutter: "blue",
-      Firebase: "warning",
+      HTML: "warning",
+      CSS: "info",
+      SCSS: "pink",
+      Sass: "pink",
+      JavaScript: "warning",
+      TypeScript: "primary",
       React: "info",
+      Vue: "success",
+      Angular: "danger",
+      Tailwind: "cyan",
+      Bootstrap: "purple",
+
+      // Backend
+      Laravel: "danger",
+      PHP: "indigo",
       Nodejs: "success",
+      Express: "dark",
+      Python: "primary",
+      Django: "success",
+      Flask: "light",
+
+      // Mobile
+      Flutter: "blue",
+      ReactNative: "info",
+      Kotlin: "orange",
+      Swift: "danger",
+      Java: "warning",
+
+      // Database
+      MySQL: "warning",
+      PostgreSQL: "info",
       MongoDB: "success",
+      Firebase: "warning",
+      Redis: "danger",
+      SQLite: "secondary",
       Default: "secondary",
     };
     var color = "";

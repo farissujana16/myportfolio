@@ -230,6 +230,51 @@ body.bg-dark-mode {
   color: #0b61d2 !important;
 }
 
+.bg-label-cyan {
+  background-color: #e0f7fa !important;
+  color: #00acc1 !important;
+}
+
+.bg-label-teal {
+  background-color: #e0f2f1 !important;
+  color: #00897b !important;
+}
+
+.bg-label-pink {
+  background-color: #fce4ec !important;
+  color: #ec407a !important;
+}
+
+.bg-label-orange {
+  background-color: #fff3e0 !important;
+  color: #fb8c00 !important;
+}
+
+.bg-label-brown {
+  background-color: #efebe9 !important;
+  color: #6d4c41 !important;
+}
+
+.bg-label-black {
+  background-color: #e0e0e0 !important;
+  color: #000000 !important;
+}
+
+.bg-label-indigo {
+  background-color: #e8eaf6 !important;
+  color: #3f51b5 !important;
+}
+
+.bg-label-purple {
+  background-color: #f3e5f5 !important;
+  color: #9c27b0 !important;
+}
+
+.bg-label-green {
+  background-color: #e8f5e9 !important;
+  color: #43a047 !important;
+}
+
 .badge-top {
   border-top-right-radius: 20px !important;
 }

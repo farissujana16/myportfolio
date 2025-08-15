@@ -276,7 +276,7 @@ body.bg-dark-mode {
 }
 
 .badge-top {
-  border-top-right-radius: 20px !important;
+  border-top-right-radius: 18px !important;
 }
 
 @media (min-width: 768px) {

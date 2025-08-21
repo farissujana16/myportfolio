@@ -12,7 +12,7 @@
       "platform": "mobile",
       "image": "assets/image/project/mobile/tiket.jpg",
       "description": "A bus ticket booking application that allows users to search, select, and purchase tickets easily. Offers real-time seat availability, route information, and digital ticketing.",
-      "technologies": ["Flutter", "REST API"]
+      "technologies": ["Flutter"]
     },
     {
       "title": "Web Portfolio",

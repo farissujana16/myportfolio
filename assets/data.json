@@ -20,6 +20,13 @@
       "image": "assets/image/project/web/portfolio.jpg",
       "description": "A responsive web portfolio built with HTML, CSS, and JavaScript, showcasing personal projects, skills, and experiences. All content such as project details and skill data is dynamically loaded from a JSON file to ensure easy updates and data management.",
       "technologies": ["Bootstrap", "JavaScript"]
+    },
+    {
+      "title": "Self Reminder",
+      "platform": "web",
+      "image": "assets/image/project/web/reminder.jpg",
+      "description": "This application presents a carefully selected verse from the Qur’an each day, accompanied by its meaning to nurture peace and mindfulness. It serves as a gentle daily reminder for reflection, spiritual growth, and inner calm.",
+      "technologies": ["Tailwind CSS", "JavaScript"]
     }
   ]
 }

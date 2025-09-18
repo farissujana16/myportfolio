@@ -25,7 +25,7 @@
       "title": "Self Reminder",
       "platform": "web",
       "image": "assets/image/project/web/reminder.jpg",
-      "description": "This application presents a carefully selected verse from the Qur’an each day, accompanied by its meaning to nurture peace and mindfulness. It serves as a gentle daily reminder for reflection, spiritual growth, and inner calm.",
+      "description": "This application presents a carefully selected verse from the Qur’an each day, accompanied by its meaning to nurture peace, mindfulness, reflection, spiritual growth, and inner calm. <a href='https://farissujana16.github.io/reminder_life/'>Visit</a>",
       "technologies": ["Tailwind CSS", "JavaScript"]
     }
   ]

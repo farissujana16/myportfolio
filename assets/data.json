@@ -18,7 +18,7 @@
       "title": "Web Portfolio",
       "platform": "web",
       "image": "assets/image/project/web/portfolio.jpg",
-      "description": "A responsive web portfolio built with HTML, CSS, and JavaScript, showcasing personal projects, skills, and experiences. All content such as project details and skill data is dynamically loaded from a JSON file to ensure easy updates and data management.",
+      "description": "A responsive web portfolio built with HTML, CSS, and JavaScript, showcasing personal projects, skills, and experiences. All content such as project details and skill data is dynamically loaded from a JSON file to ensure easy updates and data management. <a href='https://github.com/farissujana16/portfolio.git/'>Visit</a>",
       "technologies": ["Bootstrap", "JavaScript"]
     },
     {

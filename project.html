@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Detail</title>
+
+    <link rel="icon" type="image/png" href="assets/image/icon/logo_black.png" />
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-utilities.css" />
+    <link rel="stylesheet" href="assets/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="assets/main.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <style>
+      /* Style untuk tombol Back (Fixed position) */
+      .back-btn {
+        position: fixed;
+        top: 1rem;
+        left: 1rem;
+        z-index: 1000;
+        background-color: #575757;
+        border: 1px solid #575757;
+        color: white;
+        padding: 0.45rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 16px;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: all 0.2s ease;
+      }
+      .back-btn:hover {
+        background-color: #feba17;
+        border-color: #feba17;
+        color: #000000;
+      }
+
+      /* Style untuk tombol Link Project (SAMA dengan Back btn, tapi posisi relative) */
+      .action-btn {
+        background-color: #575757;
+        border: 1px solid #575757;
+        color: white;
+        padding: 0.5rem 1.2rem;
+        font-size: 0.9rem;
+        border-radius: 16px; /* Samakan radius */
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.2s ease;
+        margin-right: 0.5rem; /* Jarak antar tombol */
+        margin-bottom: 0.5rem;
+      }
+      .action-btn:hover {
+        background-color: #feba17;
+        border-color: #feba17;
+        color: #000000;
+      }
+
+      /* Styling tambahan */
+      .highlight-list li {
+        color: #a0a0a0;
+        margin-bottom: 0.5rem;
+      }
+      .project-type {
+        font-size: 0.9rem;
+        color: #feba17;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+    </style>
+  </head>
+  <body class="bg-dark-mode">
+    <div
+      id="particles-js"
+      style="position: fixed; width: 100%; height: 100vh; z-index: -1"
+    ></div>
+
+    <a href="index.html" class="back-btn">
+      <i class="bi bi-arrow-left"></i> Back
+    </a>
+
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10 col-12">
+          <div class="card bg-dark-mode p-4 border-secondary">
+            <div id="project-detail" class="text-md-start">
+              <div class="d-flex justify-content-center my-5">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const projectId = parseInt(urlParams.get("id"));
+
+      if (isNaN(projectId)) {
+        document.getElementById("project-detail").innerHTML =
+          '<p class="text-danger text-center">Invalid project ID.</p>';
+      } else {
+        fetch("assets/data_new.json")
+          .then((response) => {
+            if (!response.ok) throw new Error("Failed to load data");
+            return response.json();
+          })
+          .then((data) => {
+            const projects = data.projects;
+            if (projectId < 0 || projectId >= projects.length) {
+              document.getElementById("project-detail").innerHTML =
+                '<p class="text-danger text-center">Project not found.</p>';
+              return;
+            }
+
+            const project = projects[projectId];
+
+            // Mapping Warna
+            const techColorMap = {
+              HTML: "warning",
+              CSS: "info",
+              JavaScript: "warning",
+              TypeScript: "primary",
+              React: "info",
+              Vue: "success",
+              Angular: "danger",
+              Tailwind: "cyan",
+              "Tailwind CSS": "cyan",
+              Bootstrap: "purple",
+              Laravel: "danger",
+              CodeIgniter: "danger",
+              PHP: "indigo",
+              Nodejs: "success",
+              Python: "primary",
+              Flutter: "blue",
+              MySQL: "warning",
+              PostgreSQL: "info",
+              Default: "secondary",
+            };
+
+            let techBadges = project.technologies
+              .map((tech) => {
+                const color = techColorMap[tech] || techColorMap.Default;
+                return `<span class="badge bg-label-${color}">${tech}</span>`;
+              })
+              .join("");
+
+            // Highlights
+            let highlightsHtml = "";
+            if (project.highlights && project.highlights.length > 0) {
+              const listItems = project.highlights
+                .map((item) => `<li>${item}</li>`)
+                .join("");
+              highlightsHtml = `
+                    <div class="mb-4">
+                        <h5 class="text-white mb-2">Key Highlights</h5>
+                        <ul class="highlight-list ps-3">${listItems}</ul>
+                    </div>
+                `;
+            }
+
+            const platformColor =
+              project.platform === "web" ? "primary" : "success";
+
+            // --- LOGIKA TOMBOL BARU (Bootstrap Icons) ---
+            let buttonsHtml = "";
+
+            // Cek apakah object link ada
+            if (project.link) {
+              // Cek Github
+              if (project.link.github && project.link.github.trim() !== "") {
+                buttonsHtml += `
+                        <a href="${project.link.github}" target="_blank" class="action-btn">
+                            <i class="bi bi-github"></i> Repository
+                        </a>`;
+              }
+
+              // Cek Live Demo
+              if (project.link.live && project.link.live.trim() !== "") {
+                buttonsHtml += `
+                        <a href="${project.link.live}" target="_blank" class="action-btn">
+                            <i class="bi bi-globe"></i> Live Demo
+                        </a>`;
+              }
+            }
+
+            // Jika ada tombol, bungkus dengan container
+            let actionsContainer = "";
+            if (buttonsHtml !== "") {
+              actionsContainer = `
+                    <div class="mt-4 pt-3 border-top border-secondary">
+                        ${buttonsHtml}
+                    </div>`;
+            }
+            // ---------------------------
+
+            document.getElementById("project-detail").innerHTML = `
+              <div class="mb-4">
+                <span class="project-type">${project.type}</span>
+                <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+                  <h2 class="text-white m-0">${project.title}</h2>
+                  <span class="badge bg-${platformColor}">${project.platform}</span>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <img src="${project.image}" class="img-fluid rounded shadow-sm" alt="${project.title}" 
+                     style="width: 100%; height: auto; border: 1px solid rgba(255,255,255,0.1);">
+              </div>
+
+              <div class="mb-4">
+                <h5 class="text-white mb-2">Overview</h5>
+                <p class="text-muted-dark" style="font-size: 1rem; line-height: 1.7; text-align: justify;">
+                  ${project.full_description}
+                </p>
+              </div>
+
+              ${highlightsHtml}
+
+              <div class="mb-4">
+                <h5 class="text-white mb-2">Technologies Used</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  ${techBadges}
+                </div>
+              </div>
+
+              ${actionsContainer}
+            `;
+          })
+          .catch((err) => {
+            console.error(err);
+            document.getElementById("project-detail").innerHTML =
+              '<p class="text-danger text-center">Failed to load project details.</p>';
+          });
+      }
+
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 60 },
+          color: { value: "#ffffff" },
+          shape: { type: "circle" },
+          opacity: { value: 0.5 },
+          size: { value: 3 },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#ffffff",
+            opacity: 0.5,
+            width: 1,
+          },
+          move: { enable: true, speed: 2 },
+        },
+        interactivity: {
+          events: { onhover: { enable: true, mode: "repulse" } },
+        },
+        retina_detect: true,
+      });
+    </script>
+  </body>
+</html>

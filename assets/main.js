@@ -1,4 +1,4 @@
-fetch("assets/data.json")
+fetch("assets/data_new.json")
   .then((response) => {
     if (!response.ok) {
       throw new Error("Failed to load JSON");
@@ -50,7 +50,7 @@ fetch("assets/data.json")
     };
     var color = "";
 
-    data.projects.forEach((data) => {
+    data.projects.forEach((data, index) => {
       if (data.platform == "web") {
         color = "primary";
       } else {
@@ -58,7 +58,9 @@ fetch("assets/data.json")
       }
 
       str +=
-        '<div class="project-item position-relative">\
+        '<div onclick="detail(' +
+        index +
+        ')" class="project-item position-relative" style="cursor: pointer;">\
                       <span class="position-absolute top-0 end-0 badge badge-top bg-' +
         color +
         '" style="font-size:medium">' +
@@ -109,6 +111,11 @@ fetch("assets/data.json")
     document.getElementById("project-list").innerHTML =
       '<p class="text-danger">Failed to load project data.</p>';
   });
+
+function detail(index) {
+  console.log(index);
+  window.location.href = "project.html?id=" + index;
+}
 
 particlesJS("particles-js", {
   particles: {

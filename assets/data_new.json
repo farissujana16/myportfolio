@@ -1,0 +1,167 @@
+{
+  "projects": [
+    {
+      "title": "Bus Ticket Management System",
+      "type": "Professional Case Study",
+      "platform": "web",
+      "image": "assets/image/project/web/tiket.jpg",
+      "description": "Internal web-based system for managing bus schedules, routes, ticket pricing, and operational data with secure multi-role access.",
+      "full_description": "This system was developed to centralize bus schedules, route management, and ticket pricing for daily operations. One of the main challenges was handling complex business rules across different operational roles while maintaining data consistency. The backend was designed with clear separation of concerns, role-based access control, and optimized database queries to ensure the system remained stable and scalable as operational data grew.",
+      "technologies": ["Laravel", "MySQL"],
+      "highlights": [
+        "REST API development",
+        "Role-based access control",
+        "Database optimization",
+        "Secure data handling"
+      ],
+      "link": {
+        "github": "",
+        "live": ""
+      }
+    },
+    {
+      "title": "Bus Ticket Mobile App",
+      "type": "Professional Case Study",
+      "platform": "mobile",
+      "image": "assets/image/project/mobile/tiket.jpg",
+      "description": "Mobile ticket booking application integrated with backend services for real-time seat availability and booking validation.",
+      "full_description": "This mobile application enables passengers to search routes, check seat availability, and book tickets. A key challenge was ensuring real-time data accuracy between the mobile app and backend services, especially for seat availability and booking validation. Careful API design and synchronization logic were implemented to minimize data conflicts and ensure reliable user experience.",
+      "technologies": ["Flutter"],
+      "highlights": [
+        "API integration",
+        "Authentication handling",
+        "Real-time data synchronization"
+      ],
+      "link": {
+        "github": "",
+        "live": ""
+      }
+    },
+    {
+      "title": "E-Proker (Employee KPI System)",
+      "type": "Private Company Project",
+      "platform": "web",
+      "image": "assets/image/project/privacy.png",
+      "description": "Internal application for managing employee KPIs, performance tracking, and evaluation workflows.",
+      "full_description": "E-Proker was built to manage employee performance through structured KPI calculations and evaluations. The main challenge was translating business performance indicators into accurate system logic while supporting different evaluation roles. The backend handles dynamic KPI formulas, evaluation periods, and access restrictions to ensure reliable and transparent performance assessments.",
+      "technologies": ["CodeIgniter", "MySQL"],
+      "highlights": [
+        "KPI calculation logic",
+        "Role-based authorization",
+        "Structured performance reporting"
+      ],
+      "link": {
+        "github": "",
+        "live": ""
+      }
+    },
+    {
+      "title": "MIS (Management Information System)",
+      "type": "Private Company Project",
+      "platform": "web",
+      "image": "assets/image/project/privacy.png",
+      "description": "Operational financial information system for recording office expenses and presenting data through analytical charts.",
+      "full_description": "MIS was developed to support operational financial monitoring and reporting. A significant challenge was processing large volumes of financial records while keeping reports accurate and responsive. The backend focuses on efficient data aggregation, optimized queries, and structured datasets to support chart-based analysis used by management for decision-making.",
+      "technologies": ["CodeIgniter", "MySQL"],
+      "highlights": [
+        "Financial data processing",
+        "Chart-based reporting",
+        "Query optimization"
+      ],
+      "link": {
+        "github": "",
+        "live": ""
+      }
+    },
+    {
+      "title": "PIS (Passenger Information System)",
+      "type": "Private Company Project",
+      "platform": "web",
+      "image": "assets/image/project/privacy.png",
+      "description": "Passenger information system that displays departure schedules and route information for public access.",
+      "full_description": "PIS was designed to provide passengers with accurate and up-to-date departure schedules. The primary challenge was ensuring schedule reliability and timely data updates from internal sources. The backend manages schedule data carefully to ensure consistency and minimize incorrect or outdated public information.",
+      "technologies": ["CodeIgniter", "MySQL"],
+      "highlights": [
+        "Schedule management",
+        "Backend-driven content delivery",
+        "Reliable data synchronization"
+      ],
+      "link": {
+        "github": "",
+        "live": ""
+      }
+    },
+    {
+      "title": "SIMA Operation",
+      "type": "Private Company Project",
+      "platform": "web",
+      "image": "assets/image/project/privacy.png",
+      "description": "Operational management system for monitoring daily business activities and company operations.",
+      "full_description": "SIMA Operation was created to record and monitor daily operational activities across business units. One of the main challenges was designing flexible workflows that could adapt to different operational processes. The backend was structured to handle diverse operational data while maintaining clarity, consistency, and scalability.",
+      "technologies": ["CodeIgniter", "MySQL"],
+      "highlights": [
+        "Operational workflow handling",
+        "Structured data management",
+        "Scalable system design"
+      ],
+      "link": {
+        "github": "",
+        "live": ""
+      }
+    },
+    {
+      "title": "New Loket (Ticket Sales System)",
+      "type": "Private Company Project",
+      "platform": "web",
+      "image": "assets/image/project/privacy.png",
+      "description": "Ticket sales system supporting transaction processing, pricing logic, and operational sales workflows.",
+      "full_description": "New Loket is a ticket sales system built to handle daily sales transactions and pricing rules. The main challenge was ensuring transaction integrity while handling concurrent sales activities. The backend focuses on reliable business logic, accurate pricing calculations, and secure data handling to support operational staff.",
+      "technologies": ["CodeIgniter", "MySQL"],
+      "highlights": [
+        "Transaction handling",
+        "Business logic implementation",
+        "Secure data processing"
+      ],
+      "link": {
+        "github": "",
+        "live": ""
+      }
+    },
+    {
+      "title": "Personal Web Portfolio",
+      "type": "Personal Project",
+      "platform": "web",
+      "image": "assets/image/project/web/portfolio.jpg",
+      "description": "Personal portfolio website with dynamic content loaded from JSON for easy maintenance and scalability.",
+      "full_description": "This portfolio website was built to present projects and experience in a structured way. The main challenge was designing a flexible data structure that allows easy updates without modifying the frontend code. Using JSON-based content management helped keep the site maintainable and scalable.",
+      "technologies": ["Bootstrap", "JavaScript"],
+      "highlights": [
+        "JSON-based content management",
+        "Responsive layout",
+        "Clean project structure"
+      ],
+      "link": {
+        "github": "https://github.com/farissujana16/portfolio",
+        "live": ""
+      }
+    },
+    {
+      "title": "Self Reminder App",
+      "type": "Personal Project",
+      "platform": "web",
+      "image": "assets/image/project/web/reminder.jpg",
+      "description": "Lightweight web application that displays daily Qur’an verses with meanings, focusing on simplicity and accessibility.",
+      "full_description": "Self Reminder was built as a simple and lightweight application focused on daily reflection. The main challenge was keeping the application minimal while ensuring fast loading times and accessibility across devices. The solution was a static, clean architecture with a strong focus on user experience.",
+      "technologies": ["Tailwind CSS", "JavaScript"],
+      "highlights": [
+        "Static deployment",
+        "Minimalist architecture",
+        "User-focused content delivery"
+      ],
+      "link": {
+        "github": "",
+        "live": "https://farissujana16.github.io/reminder_life/"
+      }
+    }
+  ]
+}

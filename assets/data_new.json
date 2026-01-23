@@ -162,6 +162,25 @@
         "github": "",
         "live": "https://farissujana16.github.io/reminder_life/"
       }
+    },
+    {
+      "title": "ZanBoard Admin Template",
+      "type": "Personal Project",
+      "platform": "web",
+      "image": "assets/image/project/web/zanboard.jpg",
+      "description": "Modern admin dashboard template inspired by shadcn/ui design system, built using Bootstrap 5 for responsive and clean layouts.",
+      "full_description": "ZanBoard Admin Template is a personal project created as a reusable admin dashboard template. The main goal was to combine the clean and modern visual style of shadcn/ui with the robustness and grid system of Bootstrap 5. This project focuses on providing a structured, scalable, and developer-friendly starting point for building admin panels or internal tools.",
+      "technologies": ["Bootstrap 5", "JavaScript", "HTML", "CSS"],
+      "highlights": [
+        "shadcn/ui-inspired design",
+        "Reusable admin components",
+        "Responsive layout with Bootstrap 5",
+        "Clean and scalable structure"
+      ],
+      "link": {
+        "github": "https://github.com/farissujana16/mytemplate.git",
+        "live": "https://farissujana16.github.io/mytemplate/"
+      }
     }
   ]
 }
